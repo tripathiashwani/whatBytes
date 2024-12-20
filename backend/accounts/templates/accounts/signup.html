@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 360px;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 24px;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form input {
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        form input:focus {
+            border-color: #6a11cb;
+        }
+        form .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+        form button {
+            padding: 12px;
+            background-color: #2575fc;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        form button:hover {
+            background-color: #1a5fc0;
+            box-shadow: 0 4px 10px rgba(37, 117, 252, 0.4);
+        }
+        form a {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #2575fc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        form a:hover {
+            color: #1a5fc0;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div>
+                <input type="text" id="username" name="username" placeholder="Name" required>
+                {% if form.username.errors %}
+                    <div class="error-message">
+                        {{ form.username.errors|join:", " }}
+                    </div>
+                {% endif %}
+            </div>
+            <div>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                {% if form.email.errors %}
+                    <div class="error-message">
+                        {{ form.email.errors|join:", " }}
+                    </div>
+                {% endif %}
+            </div>
+            <div>
+                <input type="password" id="password1" name="password1" placeholder="Password" required>
+                {% if form.password1.errors %}
+                    <div class="error-message">
+                        {{ form.password1.errors|join:", " }}
+                    </div>
+                {% endif %}
+            </div>
+            <div>
+                <input type="password" id="password2" name="password2" placeholder="Confirm Password" required>
+                {% if form.password2.errors %}
+                    <div class="error-message">
+                        {{ form.password2.errors|join:", " }}
+                    </div>
+                {% endif %}
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+        <a href="{% url 'login' %}">Already have an account? Login</a>
+    </div>
+</body>
+</html>
