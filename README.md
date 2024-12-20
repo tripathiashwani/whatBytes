@@ -15,19 +15,36 @@ A simple web application to manage user authentication and account functionaliti
 ---
 
 ## Screenshots
-
-### Login Page
-![Login Page](screenshots/login.png)
+### DashBoard Page
+![Dashboard](screenshots/dashboard.png)
 
 ### Signup Page
 ![Signup Page](screenshots/signup.png)
 
+### Login Page
+![Login Page](screenshots/login.png)
+
+### Profile Page
+![Login Page](screenshots/profile.png)
+
+
 ### Change Password Page
-![Change Password Page](screenshots/change_password_page.png)
+![Change Password Page](screenshots/password_change.png)
 
-### DashBoard Page
-![Change Password Page](screenshots/dashboard.png)
 
+
+### Forgot Password Page
+![Forgotpassword page](screenshots/forgotpassword.png)
+
+### Forgot Password reset mail sent confirmation Page
+![Forgotpassword reset mail sent confirmation page](screenshots/password_mail_sent_confirmation.png)
+
+### Set new password Page
+![set new password page](screenshots/set_new_password.png)
+---
+
+### Password reset complete page
+![Forgotpassword page](screenshots/password_reset_complete.png)
 ---
 
 ## Tech Stack
@@ -47,5 +64,25 @@ A simple web application to manage user authentication and account functionaliti
 1. Clone the repository:
 
    ```bash
-   git clone <repository_url>
-   cd <repository_name>
+   git https://github.com/tripathiashwani/whatBytes
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Change directory:
+  ```bash
+  cd backend
+  ```
+
+4. Apply migrations
+   ```bash
+   python manage.py migrate
+   ```
+5. Run the development server:
+   ```bash
+   python manage.py runserver
+   ```
+   
+   
+   
