@@ -4,8 +4,8 @@ A simple web application to manage user authentication and account functionaliti
 
 ## Features
 
-- **Login**: Users can log in securely with a user-friendly interface.
-- **Signup**: New users can register with a responsive signup page.
+- **Login**: Users can log in using username and password.
+- **Signup**: New users can register with username,mail and password.
 - **Password Management**:
   - Reset Password
   - Change Password
